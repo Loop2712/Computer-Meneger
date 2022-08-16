@@ -9,7 +9,7 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div>
-                <x-jet-input id="type" class="hidden" type="integer" name="type" :value="1" />
+                <x-jet-input id="type" class="hidden" type="integer" name="type" :value="2" />
             </div>
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
