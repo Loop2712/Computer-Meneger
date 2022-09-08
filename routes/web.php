@@ -28,3 +28,34 @@ Route::middleware([
 });
 
 Route::get('redirects','App\Http\Controllers\HomeController@index');
+
+Route::middleware(['auth'])->group(function () {
+
+
+    Route::middleware(['type:1'])->group(function () {
+
+    //Admin
+        Route::get('/teacher', function () {
+            return view('teacher/index');
+        });
+    });
+
+    //User
+    Route::middleware(['type:2'])->group(function () {
+
+        Route::get('/teacher', function () {
+            return view('teacher/index');
+        });
+    });
+
+    //professor
+    Route::middleware(['type:3'])->group(function () {
+
+        Route::get('/teacher', function () {
+            return view('teacher/index');
+        });
+    });
+
+
+});
+    
